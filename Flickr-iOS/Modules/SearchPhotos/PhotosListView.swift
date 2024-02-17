@@ -8,10 +8,20 @@
 import SwiftUI
 
 struct PhotosListView: View {
+    
+    @Environment(\.verticalSizeClass) var verticalSizeClass: UserInterfaceSizeClass?
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
+
+    var gridItems: [GridItem] {
+        if horizontalSizeClass == .compact && verticalSizeClass == .regular {
+            return Array(repeating: GridItem(.flexible(), spacing: 0), count: 3)
+        } else {
+            return Array(repeating: GridItem(.flexible(), spacing: 0), count: 4)
+        }
+    }
+
     @State private var searchText: String = ""
     @StateObject var viewModel = PhotosListViewModel()
-
-    let gridItems = Array(repeating: GridItem(.flexible(), spacing: 0), count: 3)
 
     var body: some View {
         NavigationView {
