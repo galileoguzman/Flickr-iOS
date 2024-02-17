@@ -21,11 +21,16 @@ final class PhotosListViewModel: ObservableObject {
     @Published var photos: [Photo] = []
     @Published var isLoading: Bool = false
 
+    // Initial fetched tag
+    private let initialSearch = "porcupine"
+
     // Dependency injection
     private let service: SearchPhotosNetworkingProtocol
 
     init(service: SearchPhotosNetworkingProtocol = SearchPhotosNetworkingService()) {
         self.service = service
+
+        fetchPhotos(with: initialSearch)
     }
 }
 
