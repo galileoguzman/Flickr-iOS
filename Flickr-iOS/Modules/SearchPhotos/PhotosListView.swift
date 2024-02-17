@@ -21,6 +21,9 @@ struct PhotosListView: View {
                 HStack {
                     TextField("Search Photos", text: $searchText)
                         .padding()
+                        .onTapGesture {
+                            searchText = ""
+                        }
                         .onChange(of: searchText) {
                             if searchText.count >= 3 {
                                 viewModel.fetchPhotos(with: searchText)
@@ -45,9 +48,6 @@ struct PhotosListView: View {
                     }
                     .padding(.horizontal)
                 }
-            }
-            .onAppear {
-                viewModel.fetchPhotos(with: "porcupine")
             }
         }
     }
