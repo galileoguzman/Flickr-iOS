@@ -16,6 +16,8 @@
 		F2FF89812B8123BE0044EE43 /* PhotosListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF89802B8123BE0044EE43 /* PhotosListViewModel.swift */; };
 		F2FF89832B8129A00044EE43 /* PhotosListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF89822B8129A00044EE43 /* PhotosListView.swift */; };
 		F2FF89862B812ACE0044EE43 /* MockSearchPhotosNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF89852B812ACE0044EE43 /* MockSearchPhotosNetworking.swift */; };
+		F2FF89882B812FF60044EE43 /* PhotoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF89872B812FF60044EE43 /* PhotoItemView.swift */; };
+		F2FF898B2B8130210044EE43 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF898A2B8130210044EE43 /* RemoteImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		F2FF89802B8123BE0044EE43 /* PhotosListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListViewModel.swift; sourceTree = "<group>"; };
 		F2FF89822B8129A00044EE43 /* PhotosListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListView.swift; sourceTree = "<group>"; };
 		F2FF89852B812ACE0044EE43 /* MockSearchPhotosNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchPhotosNetworking.swift; sourceTree = "<group>"; };
+		F2FF89872B812FF60044EE43 /* PhotoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoItemView.swift; sourceTree = "<group>"; };
+		F2FF898A2B8130210044EE43 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 		F2FF89782B81218E0044EE43 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				F2FF89892B8130170044EE43 /* Views */,
 				F2FF89842B812AA90044EE43 /* Mocks */,
 				F2FF897A2B8122060044EE43 /* Networking */,
 				F2FF89792B8122000044EE43 /* Models */,
@@ -118,6 +123,7 @@
 			children = (
 				F2FF89802B8123BE0044EE43 /* PhotosListViewModel.swift */,
 				F2FF89822B8129A00044EE43 /* PhotosListView.swift */,
+				F2FF89872B812FF60044EE43 /* PhotoItemView.swift */,
 			);
 			path = SearchPhotos;
 			sourceTree = "<group>";
@@ -128,6 +134,14 @@
 				F2FF89852B812ACE0044EE43 /* MockSearchPhotosNetworking.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		F2FF89892B8130170044EE43 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F2FF898A2B8130210044EE43 /* RemoteImage.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,8 +214,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2FF898B2B8130210044EE43 /* RemoteImage.swift in Sources */,
 				F2FF897C2B8122360044EE43 /* PhotoModels.swift in Sources */,
 				F2FF89832B8129A00044EE43 /* PhotosListView.swift in Sources */,
+				F2FF89882B812FF60044EE43 /* PhotoItemView.swift in Sources */,
 				F2FF896C2B8120310044EE43 /* ContentView.swift in Sources */,
 				F2FF89812B8123BE0044EE43 /* PhotosListViewModel.swift in Sources */,
 				F2FF897E2B8122700044EE43 /* SearchPhotosNetworkingService.swift in Sources */,

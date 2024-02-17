@@ -19,13 +19,21 @@ struct PhotoSearchResponse: Decodable {
 struct Media: Decodable {
     let m: URL
 
+    /// Size 150X150 cropped square
     var q: URL {
         let url = m.absoluteString.replacingOccurrences(of: "m.jpg", with: "q.jpg")
+        return URL(string: url)!
+    }
+
+    /// Size 75x75 cropped square
+    var s: URL {
+        let url = m.absoluteString.replacingOccurrences(of: "m.jpg", with: "s.jpg")
         return URL(string: url)!
     }
 }
 
 struct Photo: Decodable {
+    let link: String
     let title: String
     let media: Media
     let tags: String
