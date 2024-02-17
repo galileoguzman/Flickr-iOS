@@ -20,6 +20,7 @@ struct RemoteImage: View {
             Image(uiImage: uiImage)
                 .resizable()
                 .scaledToFill()
+                .transition(.opacity)
         } else {
             Rectangle()
                 .foregroundColor(.gray)
@@ -37,7 +38,9 @@ struct RemoteImage: View {
             }
 
             DispatchQueue.main.async {
-                self.imageData = data
+                withAnimation {
+                    self.imageData = data
+                }
             }
         }.resume()
     }
