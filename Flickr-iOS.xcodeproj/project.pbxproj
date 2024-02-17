@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F2FF896A2B8120310044EE43 /* Flickr_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF89692B8120310044EE43 /* Flickr_iOSApp.swift */; };
-		F2FF896C2B8120310044EE43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF896B2B8120310044EE43 /* ContentView.swift */; };
 		F2FF896E2B8120330044EE43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2FF896D2B8120330044EE43 /* Assets.xcassets */; };
 		F2FF89712B8120330044EE43 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2FF89702B8120330044EE43 /* Preview Assets.xcassets */; };
 		F2FF897C2B8122360044EE43 /* PhotoModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF897B2B8122360044EE43 /* PhotoModels.swift */; };
@@ -24,7 +23,6 @@
 /* Begin PBXFileReference section */
 		F2FF89662B8120310044EE43 /* Flickr-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flickr-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2FF89692B8120310044EE43 /* Flickr_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flickr_iOSApp.swift; sourceTree = "<group>"; };
-		F2FF896B2B8120310044EE43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F2FF896D2B8120330044EE43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2FF89702B8120330044EE43 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F2FF897B2B8122360044EE43 /* PhotoModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModels.swift; sourceTree = "<group>"; };
@@ -70,7 +68,6 @@
 				F2FF89782B81218E0044EE43 /* Shared */,
 				F2FF89772B8121850044EE43 /* Modules */,
 				F2FF89692B8120310044EE43 /* Flickr_iOSApp.swift */,
-				F2FF896B2B8120310044EE43 /* ContentView.swift */,
 				F2FF896D2B8120330044EE43 /* Assets.xcassets */,
 				F2FF896F2B8120330044EE43 /* Preview Content */,
 			);
@@ -229,7 +226,6 @@
 				F2FF897C2B8122360044EE43 /* PhotoModels.swift in Sources */,
 				F2FF89832B8129A00044EE43 /* PhotosListView.swift in Sources */,
 				F2FF89882B812FF60044EE43 /* PhotoItemView.swift in Sources */,
-				F2FF896C2B8120310044EE43 /* ContentView.swift in Sources */,
 				F2FF89812B8123BE0044EE43 /* PhotosListViewModel.swift in Sources */,
 				F2FF897E2B8122700044EE43 /* SearchPhotosNetworkingService.swift in Sources */,
 				F2FF896A2B8120310044EE43 /* Flickr_iOSApp.swift in Sources */,
