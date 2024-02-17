@@ -15,13 +15,21 @@ struct PhotosListView: View {
 
     var body: some View {
         VStack {
-            TextField("Search Photos", text: $searchText)
-                .padding()
-                .onChange(of: searchText) {
-                    if searchText.count >= 3 {
-                        viewModel.fetchPhotos(with: searchText)
+
+            HStack {
+                TextField("Search Photos", text: $searchText)
+                    .padding()
+                    .onChange(of: searchText) {
+                        if searchText.count >= 3 {
+                            viewModel.fetchPhotos(with: searchText)
+                        }
                     }
+                if viewModel.isLoading {
+                    ProgressView()
+                        .padding()
                 }
+            }
+
 
             ScrollView {
                 LazyVGrid(columns: gridItems, spacing: 1) {
@@ -34,7 +42,7 @@ struct PhotosListView: View {
             }
         }
         .onAppear {
-            viewModel.fetchPhotos(with: "coast")
+            viewModel.fetchPhotos(with: "porcupine")
         }
     }
 }
