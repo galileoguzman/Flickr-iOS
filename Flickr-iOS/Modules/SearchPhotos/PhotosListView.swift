@@ -14,35 +14,41 @@ struct PhotosListView: View {
     let gridItems = Array(repeating: GridItem(.flexible(), spacing: 0), count: 3)
 
     var body: some View {
-        VStack {
+        NavigationView {
+            VStack {
 
-            HStack {
-                TextField("Search Photos", text: $searchText)
-                    .padding()
-                    .onChange(of: searchText) {
-                        if searchText.count >= 3 {
-                            viewModel.fetchPhotos(with: searchText)
+                // Search text field
+                HStack {
+                    TextField("Search Photos", text: $searchText)
+                        .padding()
+                        .onChange(of: searchText) {
+                            if searchText.count >= 3 {
+                                viewModel.fetchPhotos(with: searchText)
+                            }
+                        }
+                    if viewModel.isLoading {
+                        ProgressView()
+                            .padding()
+                    }
+                }
+
+                // Task list
+                ScrollView {
+                    LazyVGrid(columns: gridItems, spacing: 1) {
+                        ForEach(viewModel.photos, id: \.link) { photo in
+                            NavigationLink(destination: PhotoDetailView(photo: photo)) {
+
+                                PhotoItemView(photo: photo)
+                                    .aspectRatio(contentMode: .fit)
+                            }
                         }
                     }
-                if viewModel.isLoading {
-                    ProgressView()
-                        .padding()
+                    .padding(.horizontal)
                 }
             }
-
-
-            ScrollView {
-                LazyVGrid(columns: gridItems, spacing: 1) {
-                    ForEach(viewModel.photos, id: \.link) { photo in
-                        PhotoItemView(photo: photo)
-                            .aspectRatio(contentMode: .fit)
-                    }
-                }
-                .padding(.horizontal)
+            .onAppear {
+                viewModel.fetchPhotos(with: "porcupine")
             }
-        }
-        .onAppear {
-            viewModel.fetchPhotos(with: "porcupine")
         }
     }
 }
