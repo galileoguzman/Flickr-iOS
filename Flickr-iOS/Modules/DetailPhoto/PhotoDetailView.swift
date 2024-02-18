@@ -18,6 +18,9 @@ struct PhotoDetailView: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: geometry.size.width, height: 300)
                         .clipped()
+                        .accessibility(label: Text("Photo by \(photo.authorUsername)"))
+                        .accessibility(addTraits: .isImage)
+                        .accessibilitySortPriority(1)
 
                     VStack(alignment: .trailing, spacing: 4) {
                         Text(photo.authorDisplayable)
@@ -38,12 +41,19 @@ struct PhotoDetailView: View {
                 Text(photo.title)
                     .font(.headline)
                     .fontWeight(.bold)
+                    .accessibility(label: Text("Title: \(photo.title)"))
+                    .accessibilitySortPriority(2)
 
                 Text("Published date: \(photo.publishedAt)")
                     .font(.caption)
+                    .accessibility(label: Text("Published date: \(photo.publishedAt)"))
+                    .accessibility(hint: Text("This is the published date of the photo."))
+                    .accessibilitySortPriority(3)
 
                 Text("Tags: \(photo.tags)")
                     .font(.caption)
+                    .accessibility(label: Text("Tags: \(photo.tags)"))
+                    .accessibilitySortPriority(4)
             }
             .padding()
 
