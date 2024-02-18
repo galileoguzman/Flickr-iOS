@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F25F2EE92B826D4E00C800F6 /* MockPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25F2EE82B826D4E00C800F6 /* MockPhotoModel.swift */; };
 		F2FF896A2B8120310044EE43 /* Flickr_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF89692B8120310044EE43 /* Flickr_iOSApp.swift */; };
 		F2FF896E2B8120330044EE43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2FF896D2B8120330044EE43 /* Assets.xcassets */; };
 		F2FF89712B8120330044EE43 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2FF89702B8120330044EE43 /* Preview Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F25F2EE82B826D4E00C800F6 /* MockPhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPhotoModel.swift; sourceTree = "<group>"; };
 		F2FF89662B8120310044EE43 /* Flickr-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flickr-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2FF89692B8120310044EE43 /* Flickr_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flickr_iOSApp.swift; sourceTree = "<group>"; };
 		F2FF896D2B8120330044EE43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				F2FF89852B812ACE0044EE43 /* MockSearchPhotosNetworking.swift */,
+				F25F2EE82B826D4E00C800F6 /* MockPhotoModel.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				F2FF89882B812FF60044EE43 /* PhotoItemView.swift in Sources */,
 				F2FF89812B8123BE0044EE43 /* PhotosListViewModel.swift in Sources */,
 				F2FF897E2B8122700044EE43 /* SearchPhotosNetworkingService.swift in Sources */,
+				F25F2EE92B826D4E00C800F6 /* MockPhotoModel.swift in Sources */,
 				F2FF896A2B8120310044EE43 /* Flickr_iOSApp.swift in Sources */,
 				F2FF898E2B8143F40044EE43 /* PhotoDetailView.swift in Sources */,
 				F2FF89862B812ACE0044EE43 /* MockSearchPhotosNetworking.swift in Sources */,

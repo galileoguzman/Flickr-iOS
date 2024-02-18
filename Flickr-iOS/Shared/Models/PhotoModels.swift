@@ -38,4 +38,27 @@ struct Photo: Decodable {
     let media: Media
     let tags: String
     let description: String
+    let author: String
+}
+
+extension Photo {
+    var author_username: String {
+        guard let regex = try? NSRegularExpression(pattern: "\\(\"(.+?)\"\\)", options: []),
+              let match = regex.firstMatch(in: author, options: [], range: NSRange(author.startIndex..., in: author)),
+              let range = Range(match.range(at: 1), in: author) else {
+            return ""
+        }
+        return String(author[range])
+    }
+
+    var author_email: String {
+        guard let range = author.range(of: #"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b"#, options: .regularExpression) else {
+            return ""
+        }
+        return String(author[range])
+    }
+
+    var author_displayable: String {
+        return "Photo of \(author_username)"
+    }
 }
