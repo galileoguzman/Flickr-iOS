@@ -12,10 +12,26 @@ struct PhotoDetailView: View {
 
     var body: some View {
         VStack {
-            RemoteImage(url: photo.media.m)
-                .aspectRatio(contentMode: .fit)
-                .frame(maxHeight: 300)
-                .padding()
+            GeometryReader { geometry in
+                ZStack(alignment: .bottomTrailing) {
+                    RemoteImage(url: photo.media.m)
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: geometry.size.width, height: 300)
+                        .clipped()
+
+                    VStack(alignment: .trailing, spacing: 4) {
+                        Text(photo.author_displayable)
+                            .font(.callout)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .padding(8)
+                            .background(Color.black.opacity(0.5))
+                            .cornerRadius(8)
+                            .padding(8)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                }
+            }
 
             Text(photo.title)
                 .font(.title)
@@ -34,11 +50,5 @@ struct PhotoDetailView: View {
 }
 
 #Preview {
-    PhotoDetailView(photo: Photo(
-        link: "https://live.staticflickr.com/65535/53532215897/",
-        title: "One whale going down.",
-        media: Media(m: URL(string: "https://live.staticflickr.com/65535/53532215897_16ec08f692_m.jpg")!),
-        tags: "california ca coast westcoast pacificocean pacificcoasthighway whales humpbackwhales kelpkelpbeds",
-        description: "One of the whales again descends into the kelp beds as the other cruises on the surface."
-    ))
+    PhotoDetailView(photo: MockPhotoModel.sample)
 }
