@@ -9,9 +9,11 @@ import Foundation
 
 class MockSearchPhotosNetworking {
     private var photos: [Photo] = []
+    private var shouldFailL: Bool
 
-    init() {
-        photos = [
+    init(shouldFailL: Bool = false) {
+        self.shouldFailL = shouldFailL
+        self.photos = [
             Photo(
                 link: "https://live.staticflickr.com/65535/53533484753/",
                 title: "High and Mighty: Durlston Head Viewpoint",
@@ -54,7 +56,10 @@ class MockSearchPhotosNetworking {
 
 extension MockSearchPhotosNetworking: SearchPhotosNetworkingProtocol {
     func fetchPhotos(with tags: String, completion: @escaping (Result<[Photo], Error>) -> Void) {
-        // Mock success response
-        completion(.success(photos))
+        if shouldFailL {
+            completion(.failure(NetworkError.invalidResponse))
+        } else {
+            completion(.success(photos))
+        }
     }
 }
