@@ -39,6 +39,7 @@ struct Photo: Decodable {
     let tags: String
     let description: String
     let author: String
+    let published: String
 }
 
 extension Photo {
@@ -60,5 +61,16 @@ extension Photo {
 
     var author_displayable: String {
         return "Photo of \(author_username)"
+    }
+
+    var published_at: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+
+        if let date = dateFormatter.date(from: published) {
+            dateFormatter.dateFormat = "dd MMM yyyy"
+            return dateFormatter.string(from: date)
+        }
+        return "Not available"
     }
 }

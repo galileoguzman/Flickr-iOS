@@ -34,19 +34,24 @@ struct PhotoDetailView: View {
             }
             .frame(maxHeight: 300)
 
-            Text(photo.title)
-                .font(.title)
-                .fontWeight(.bold)
-                .padding()
+            VStack(alignment: .leading){
+                Text(photo.title)
+                    .font(.title)
+                    .fontWeight(.bold)
 
-            Text(photo.description)
-                .font(.footnote)
-                .fontWeight(.bold)
-                .padding()
+                Text("Published date: \(photo.published_at)")
+                    .font(.caption)
 
-            Text("Tags: \(photo.tags)")
-                .font(.caption)
-                .padding()
+                Text("Tags: \(photo.tags)")
+                    .font(.caption)
+            }
+            .padding()
+
+            HTMLTextView(
+                htmlString: photo.description
+            )
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding()
             
             Spacer()
 
