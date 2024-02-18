@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PhotosListView: View {
-    
+
     @Environment(\.verticalSizeClass) var verticalSizeClass: UserInterfaceSizeClass?
     @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
 
@@ -27,9 +27,9 @@ struct PhotosListView: View {
         NavigationView {
             VStack {
 
-                // Search text field
+                // Search text field with accessibility options
                 HStack {
-                    TextField("Search Photos", text: $searchText)
+                    TextField("Search for Photos", text: $searchText)
                         .padding()
                         .onTapGesture {
                             searchText = ""
@@ -39,9 +39,18 @@ struct PhotosListView: View {
                                 viewModel.fetchPhotos(with: searchText)
                             }
                         }
+                        .accessibilityLabel("Search for photos")
+                        .accessibilityAction(named: "Search") {
+                            viewModel.fetchPhotos(with: searchText)
+                        }
+                        .accessibilityAddTraits(.isSearchField)
+                        .accessibilityHint("Type at least 3 characters to begin searching")
+
                     if viewModel.isLoading {
                         ProgressView()
                             .padding()
+                            .accessibilityLabel("Loading")
+                            .accessibilityHint("The application is waiting for results of photos")
                     }
                 }
 
@@ -53,6 +62,8 @@ struct PhotosListView: View {
 
                                 PhotoItemView(photo: photo)
                                     .aspectRatio(contentMode: .fit)
+                                    .accessibilityLabel("View photo detail")
+                                    .accessibilityHint("Double tap to view details of this photo")
                             }
                         }
                     }
