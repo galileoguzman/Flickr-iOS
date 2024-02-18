@@ -11,7 +11,7 @@ struct PhotoDetailView: View {
     let photo: Photo
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 0) {
             GeometryReader { geometry in
                 ZStack(alignment: .bottomTrailing) {
                     RemoteImage(url: photo.media.m)
@@ -32,20 +32,26 @@ struct PhotoDetailView: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
                 }
             }
+            .frame(maxHeight: 300)
 
             Text(photo.title)
                 .font(.title)
                 .fontWeight(.bold)
                 .padding()
 
-            Text("Tags: \(photo.tags)")
-                .font(.headline)
+            Text(photo.description)
+                .font(.footnote)
+                .fontWeight(.bold)
                 .padding()
 
+            Text("Tags: \(photo.tags)")
+                .font(.caption)
+                .padding()
+            
             Spacer()
+
         }
         .navigationBarTitle("", displayMode: .inline)
-        
     }
 }
 
