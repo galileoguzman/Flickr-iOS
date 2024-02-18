@@ -43,7 +43,7 @@ struct Photo: Decodable {
 }
 
 extension Photo {
-    var author_username: String {
+    var authorUsername: String {
         guard let regex = try? NSRegularExpression(pattern: "\\(\"(.+?)\"\\)", options: []),
               let match = regex.firstMatch(in: author, options: [], range: NSRange(author.startIndex..., in: author)),
               let range = Range(match.range(at: 1), in: author) else {
@@ -52,18 +52,18 @@ extension Photo {
         return String(author[range])
     }
 
-    var author_email: String {
+    var authorEmail: String {
         guard let range = author.range(of: #"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b"#, options: .regularExpression) else {
             return ""
         }
         return String(author[range])
     }
 
-    var author_displayable: String {
-        return "Photo of \(author_username)"
+    var authorDisplayable: String {
+        return "Photo of \(authorUsername)"
     }
 
-    var published_at: String {
+    var publishedAt: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
 

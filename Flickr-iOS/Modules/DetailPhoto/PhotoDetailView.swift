@@ -20,7 +20,7 @@ struct PhotoDetailView: View {
                         .clipped()
 
                     VStack(alignment: .trailing, spacing: 4) {
-                        Text(photo.author_displayable)
+                        Text(photo.authorDisplayable)
                             .font(.callout)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
@@ -36,10 +36,10 @@ struct PhotoDetailView: View {
 
             VStack(alignment: .leading){
                 Text(photo.title)
-                    .font(.title)
+                    .font(.headline)
                     .fontWeight(.bold)
 
-                Text("Published date: \(photo.published_at)")
+                Text("Published date: \(photo.publishedAt)")
                     .font(.caption)
 
                 Text("Tags: \(photo.tags)")
