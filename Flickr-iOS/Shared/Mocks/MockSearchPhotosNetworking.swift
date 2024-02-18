@@ -46,6 +46,7 @@ class MockSearchPhotosNetworking {
 
 extension MockSearchPhotosNetworking: SearchPhotosNetworkingProtocol {
     func fetchPhotos(with tags: String, completion: @escaping (Result<[Photo], Error>) -> Void) {
-        // TBD
+        // Mock success response
+        completion(.success(photos))
     }
 }
